@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ProductosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Productos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-card *ngFor="let prod of productos">
+	  <ion-card-content>
+	    <ion-card-title>
+	      {{prod.tipo}}
+	    </ion-card-title>
+      	<p>{{prod.subtipo}}</p>
+      	<p>Cantidad actual: {{prod.cantidad}}</p>
+      	<p>Produccion mensual: {{prod.produccion}}</p>
+	  </ion-card-content>
+	</ion-card>
+
+</ion-content>

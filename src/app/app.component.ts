@@ -7,6 +7,9 @@ import { HomePage } from '../pages/home/home';
 import { LandingPage } from '../pages/landing/landing';
 import { FincaPage } from '../pages/finca/finca';
 import { UsuarioPage } from '../pages/usuario/usuario';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+
 
 @Component({
   templateUrl: 'app.html'

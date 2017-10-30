@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UserProvider } from '../../providers/user/user';
 
+import { LandingPage } from '../landing/landing';
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the SignupPage page.
  *
@@ -15,7 +18,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SignupPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	responseData : any;
+  	userData = {"nombre": "","apellido": "", "email": "", "password": "", "telefono": ""};	
+
+  constructor(public userProvider: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+
+  signup(){
+     this.userProvider.postData(this.userData).then((result) => {
+      this.responseData = result;
+      console.log(this.responseData);
+      localStorage.setItem('userData', JSON.stringify(this.responseData));
+      this.navCtrl.pop();
+    }, (err) => {
+      // Error log
+    });
+
   }
 
   ionViewDidLoad() {

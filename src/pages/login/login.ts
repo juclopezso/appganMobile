@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Platform, AlertController, App } from 'ionic-angular';
 
+import { UserProvider } from '../../providers/user/user';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the LoginPage page.
  *
@@ -15,7 +18,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  responseData : any;
+  	userData = {"email": "", "password": ""};	
+
+  constructor(public app: App, public platform: Platform, public userProvider: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  login(){
+     this.userProvider.postData(this.userData).then((result) => {
+      this.responseData = result;
+      console.log(this.responseData);
+      localStorage.setItem('userData', JSON.stringify(this.responseData));
+      this.app.getRootNav().setRoot( HomePage );
+    }, (err) => {
+      // Error log
+    });
+
   }
 
   ionViewDidLoad() {

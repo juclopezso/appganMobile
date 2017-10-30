@@ -6,13 +6,24 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>finca</ion-title>
+  <ion-navbar color="secondary">
+    <ion-title>Fincas</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+	<ion-card *ngFor="let finca of fincas">
+	  <img src= {{finca.foto_url}} />
+	  <ion-card-content>
+	    <ion-card-title>
+	      {{finca.nombre}}
+	    </ion-card-title>
+      	<p>{{finca.area}} metros cuadrados</p>
+      	<p>{{finca.direccion}}</p>
+	  </ion-card-content>
+	</ion-card>
 
 </ion-content>

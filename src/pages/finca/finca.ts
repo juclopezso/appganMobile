@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { FincaProvider } from '../../providers/finca/finca';
 /**
  * Generated class for the FincaPage page.
  *
@@ -15,7 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FincaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public fincaProvider: FincaProvider, public navCtrl: NavController, public navParams: NavParams) {
+  	this.getFincas();
+
+  }
+
+  fincas: any;
+
+  getFincas(){
+  	this.fincaProvider.getFincas()
+  	.subscribe(res=>this
+  		.fincas=res);
   }
 
   ionViewDidLoad() {
