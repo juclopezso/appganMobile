@@ -21,6 +21,10 @@
     },
     "cordova-plugin-ionic-webview": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_ANDROID": "AIzaSyBVeeB91nf9sb_q4SZMupa9iA40P6-2RK0",
+      "PACKAGE_NAME": "io.ionic.starter"
     }
   },
   "dependent_plugins": {}

@@ -15,13 +15,14 @@ export class CertificadoProvider {
     console.log('Hello CertificadoProvider Provider');
   }
 
-  apiUrl = 'http://192.168.43.20:3000';
-  //apiUrl = 'http://192.168.0.19:3000';
+  //apiUrl = 'http://192.168.43.20:3000';
+  apiUrl = 'http://192.168.0.19:3000';
 
 
   getCertificados_by_finca(id){
 	return this.http.get(this.apiUrl+'/certificados_by_finca/'+id)
 	        .map(res => res.json());
 	    }
+
 
 }

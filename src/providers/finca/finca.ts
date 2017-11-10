@@ -15,8 +15,8 @@ export class FincaProvider {
     console.log('Hello FincaProvider Provider');
   }
 
-  apiUrl = 'http://192.168.43.20:3000';
-  //apiUrl = 'http://192.168.0.19:3000';
+  //apiUrl = 'http://192.168.43.20:3000';
+  apiUrl = 'http://192.168.0.19:3000';
 
 
   getFincas(){

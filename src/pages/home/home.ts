@@ -5,6 +5,8 @@ import { FincaProvider } from '../../providers/finca/finca';
 
 import { CertificadosPage } from '../certificados/certificados';
 import { ProductosPage } from '../productos/productos';
+import { MapPage } from '../map/map';
+import { ContactoPage } from '../contacto/contacto';
 
 
 @Component({
@@ -32,5 +34,13 @@ export class HomePage {
 
   productos(id){
     this.navCtrl.push(ProductosPage, { id: id });
+  }
+
+  mapa(finca){
+    this.navCtrl.push(MapPage, { finca:finca});
+  }
+
+  contacto(id){
+    this.navCtrl.push(ContactoPage, { id: id });
   }
 }

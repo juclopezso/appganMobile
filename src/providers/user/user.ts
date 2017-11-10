@@ -17,13 +17,14 @@ export class UserProvider {
   }
 
 
-  apiUrl = 'http://192.168.43.20:3000';
-  //apiUrl = 'http://192.168.0.19:3000';
+  //apiUrl = 'http://192.168.43.20:3000';
+  apiUrl = 'http://192.168.0.19:3000';
 
-  getUsers(){
+  getUsuarios(){
 	return this.http.get(this.apiUrl+'/usuarios')
 	        .map(res => res.json());
 	    }
+
 
   postData(credentials) {
     return new Promise((resolve, reject) => {

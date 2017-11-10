@@ -14,12 +14,25 @@ import { FincaPage } from '../pages/finca/finca';
 import { UsuarioPage } from '../pages/usuario/usuario';
 import { CertificadosPage } from '../pages/certificados/certificados';
 import { ProductosPage } from '../pages/productos/productos';
+import { MapPage } from '../pages/map/map';
+import { ContactoPage } from '../pages/contacto/contacto';
 
 
 import { FincaProvider } from '../providers/finca/finca';
 import { UserProvider } from '../providers/user/user';
 import { CertificadoProvider } from '../providers/certificado/certificado';
 import { ProductoProvider } from '../providers/producto/producto';
+
+
+import {
+ GoogleMaps,
+ GoogleMap,
+ GoogleMapsEvent,
+ GoogleMapOptions,
+ CameraPosition,
+ MarkerOptions,
+ Marker
+} from '@ionic-native/google-maps';
 
 
 @NgModule({
@@ -32,7 +45,9 @@ import { ProductoProvider } from '../providers/producto/producto';
     LoginPage,
     SignupPage,
     CertificadosPage,
-    ProductosPage
+    ProductosPage,
+    MapPage,
+    ContactoPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +64,9 @@ import { ProductoProvider } from '../providers/producto/producto';
     LoginPage,
     SignupPage,
     CertificadosPage,
-    ProductosPage
+    ProductosPage,
+    MapPage,
+    ContactoPage
   ],
   providers: [
     StatusBar,
@@ -58,7 +75,8 @@ import { ProductoProvider } from '../providers/producto/producto';
     FincaProvider,
     UserProvider,
     CertificadoProvider,
-    ProductoProvider
+    ProductoProvider,
+    GoogleMaps
   ]
 })
 export class AppModule {}
