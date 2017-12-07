@@ -52,8 +52,8 @@ export class ContactoPage {
       });
 
       let info = 'Buen día, me gustaría saber más sobre su Finca, mi nombre es ' + 
-        this.userProvider.userNombre['nombre'] + 
-        this.userProvider.userApellido['apellido'] + ' y mi telefono es '
+        this.userProvider.userNombre['nombre'] + ' ' +
+        this.userProvider.userApellido['apellido'] + ' y mi teléfono es ' +
         this.userProvider.userTelefono['telefono'] + ' agradezco su respuesta.';
 
       let email = {
