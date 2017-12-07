@@ -14,6 +14,22 @@ interface ShareObj {
   [id: number]: any;
 }
 
+interface UserNombre{
+  [nombre: string]: any;
+}
+
+interface UserApellido{
+  [apellido: string]: any;
+}
+
+interface UserTelefono{
+  [telefono: number]: any;
+}
+
+interface UserEmail{
+  [email: string]: any;
+}
+
 @Injectable()
 export class UserProvider {
 
@@ -22,6 +38,10 @@ export class UserProvider {
   }
 
   shareObj: ShareObj = {};
+  userNombre: UserNombre = {};
+  userApellido: UserApellido = {};
+  userTelefono: UserTelefono = {};
+  userEmail: UserEmail = {}; 
 
   //apiUrl = 'http://192.168.43.20:3000';
   apiUrl = 'https://arcane-wildwood-86496.herokuapp.com';

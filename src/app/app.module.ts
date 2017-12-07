@@ -25,6 +25,8 @@ import { CertificadoProvider } from '../providers/certificado/certificado';
 import { ProductoProvider } from '../providers/producto/producto';
 
 import { Geolocation } from '@ionic-native/geolocation';
+import { CallNumber } from '@ionic-native/call-number';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import {
  GoogleMaps,
@@ -81,7 +83,9 @@ import {
     CertificadoProvider,
     ProductoProvider,
     GoogleMaps,
-    Geolocation
+    Geolocation,
+    CallNumber,
+    EmailComposer
   ]
 })
 export class AppModule {}

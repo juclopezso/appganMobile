@@ -23,7 +23,7 @@ export class ContactoPage {
   usuarios: any;
 
 
-  constructor(/*private emailComposer: EmailComposer, private callNumber: CallNumber,*/ public userProvider: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private emailComposer: EmailComposer, private callNumber: CallNumber, public userProvider: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
   	this.contacto_id = this.navParams.get('id');
   	this.getUsuario();
   }
@@ -38,31 +38,35 @@ export class ContactoPage {
   }
 
   llamar(telefono){
-    /*this.callNumber.callNumber(telefono, true)
+    this.callNumber.callNumber(telefono, true)
       .then(() => console.log('Launched dialer!'))
-      .catch(() => console.log('Error launching dialer'));*/
+      .catch(() => console.log('Error launching dialer'));
 
   }
 
-  email(email){
-  /*  this.emailComposer.isAvailable().then((available: boolean) =>{
-     if(available) {
-       //Now we know we can send
-     }
-    });
+  email(myEmail){
+  this.emailComposer.isAvailable().then((available: boolean) =>{
+ if(available) {
+         //Now we know we can send
+       }
+      });
 
-    let email = {
-      to: emailInput,
-      cc: '',
-      bcc: [],
-      attachments: [],
-      subject: 'Contacto finca VacApp',
-      body: '',
-      isHtml: true
-    };
+      let info = 'Buen día, me gustaría saber más sobre su Finca, mi nombre es ' + 
+        this.userProvider.userNombre['nombre'] + 
+        this.userProvider.userApellido['apellido'] + ' y mi telefono es '
+        this.userProvider.userTelefono['telefono'] + ' agradezco su respuesta.';
+
+      let email = {
+        to: myEmail,
+        bcc: [],
+        attachments: [],
+        subject: 'Contacto VacApp',
+        body: info ,
+        isHtml: true
+      };
 
     // Send a text message using default options
-    this.emailComposer.open(email);*/
+    this.emailComposer.open(email);
 
   }
 

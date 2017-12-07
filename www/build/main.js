@@ -180,7 +180,10 @@ var LoginPage = (function () {
             console.log(_this.responseData);
             localStorage.setItem('userData', JSON.stringify(_this.responseData));
             _this.userProvider.shareObj['id'] = _this.responseData['id'];
-            console.log(_this.userProvider.shareObj['id']);
+            _this.userProvider.userNombre['nombre'] = _this.responseData['nombre'];
+            _this.userProvider.userApellido['apellido'] = _this.responseData['apellido'];
+            _this.userProvider.userEmail['email'] = _this.responseData['email'];
+            _this.userProvider.userTelefono['telefono'] = _this.responseData['telefono'];
             _this.app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
         }, function (err) {
             // Error log
@@ -358,43 +361,43 @@ webpackEmptyAsyncContext.id = 123;
 
 var map = {
 	"../pages/add-finca/add-finca.module": [
-		280,
+		282,
 		9
 	],
 	"../pages/certificados/certificados.module": [
-		281,
+		283,
 		8
 	],
 	"../pages/contacto/contacto.module": [
-		282,
+		284,
 		7
 	],
 	"../pages/finca/finca.module": [
-		283,
+		285,
 		6
 	],
 	"../pages/landing/landing.module": [
-		284,
+		286,
 		5
 	],
 	"../pages/login/login.module": [
-		285,
+		287,
 		4
 	],
 	"../pages/map/map.module": [
-		286,
+		288,
 		3
 	],
 	"../pages/productos/productos.module": [
-		287,
+		289,
 		2
 	],
 	"../pages/signup/signup.module": [
-		288,
+		290,
 		1
 	],
 	"../pages/usuario/usuario.module": [
-		289,
+		291,
 		0
 	]
 };
@@ -420,7 +423,7 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CertificadoProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -469,7 +472,7 @@ CertificadoProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductoProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -512,13 +515,13 @@ ProductoProvider = __decorate([
 
 /***/ }),
 
-/***/ 213:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(234);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -526,7 +529,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 232:
+/***/ 234:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -534,10 +537,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(281);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_landing_landing__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_login_login__ = __webpack_require__(112);
@@ -554,13 +557,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_certificado_certificado__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_producto_producto__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_geolocation__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_google_maps__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_call_number__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_email_composer__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_google_maps__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -647,8 +654,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_19__providers_user_user__["a" /* UserProvider */],
             __WEBPACK_IMPORTED_MODULE_20__providers_certificado_certificado__["a" /* CertificadoProvider */],
             __WEBPACK_IMPORTED_MODULE_21__providers_producto_producto__["a" /* ProductoProvider */],
-            __WEBPACK_IMPORTED_MODULE_23__ionic_native_google_maps__["a" /* GoogleMaps */],
-            __WEBPACK_IMPORTED_MODULE_22__ionic_native_geolocation__["a" /* Geolocation */]
+            __WEBPACK_IMPORTED_MODULE_25__ionic_native_google_maps__["a" /* GoogleMaps */],
+            __WEBPACK_IMPORTED_MODULE_22__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_23__ionic_native_call_number__["a" /* CallNumber */],
+            __WEBPACK_IMPORTED_MODULE_24__ionic_native_email_composer__["a" /* EmailComposer */]
         ]
     })
 ], AppModule);
@@ -657,15 +666,15 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 279:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_landing_landing__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_finca_finca__ = __webpack_require__(110);
@@ -751,7 +760,7 @@ MyApp = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -770,6 +779,10 @@ var UserProvider = (function () {
     function UserProvider(http) {
         this.http = http;
         this.shareObj = {};
+        this.userNombre = {};
+        this.userApellido = {};
+        this.userTelefono = {};
+        this.userEmail = {};
         //apiUrl = 'http://192.168.43.20:3000';
         this.apiUrl = 'https://arcane-wildwood-86496.herokuapp.com';
         console.log('Hello UserProvider Provider');
@@ -821,7 +834,7 @@ UserProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FincaProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1034,10 +1047,9 @@ AddFincaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-add-finca',template:/*ion-inline-start:"/home/juan/Desktop/VacApp/appganMobile/src/pages/add-finca/add-finca.html"*/'<!--\n  Generated template for the AddFincaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Añadir Finca</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-content padding class="appBackground">\n	  <ion-card>\n	    <ion-card-content>\n	    <form (ngSubmit)="addFinca()">\n	      <ion-item>\n	        <ion-label stacked>Nombre</ion-label>\n	        <ion-input type="text" [(ngModel)]="fincaData.nombre" name="nombre"></ion-input>\n	      </ion-item>\n	      <ion-item>\n	        <ion-label stacked>Area</ion-label>\n	        <ion-input type="number" [(ngModel)]="fincaData.area" name="area"></ion-input>\n	      </ion-item>\n	      <ion-item>\n	        <ion-label stacked>Direccion</ion-label>\n	        <ion-input type="text" [(ngModel)]="fincaData.direccion" name="direccion"></ion-input>\n	      </ion-item>\n	      <ion-item>\n	        <ion-label stacked>Coordenadas (se usarán las coordenadas actuales)</ion-label>\n	      </ion-item>\n	      <button ion-button type="submit" block color="secondary">Añadir</button>\n	    </form>\n	    </ion-card-content>\n	  </ion-card>\n	</ion-content>\n\n</ion-content>\n'/*ion-inline-end:"/home/juan/Desktop/VacApp/appganMobile/src/pages/add-finca/add-finca.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__providers_user_user__["a" /* UserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_user_user__["a" /* UserProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_finca_finca__["a" /* FincaProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_finca_finca__["a" /* FincaProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _g || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_4__providers_user_user__["a" /* UserProvider */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__providers_finca_finca__["a" /* FincaProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
 ], AddFincaPage);
 
-var _a, _b, _c, _d, _e, _f, _g;
 //# sourceMappingURL=add-finca.js.map
 
 /***/ }),
@@ -1250,7 +1262,9 @@ MapPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_user_user__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_call_number__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_user__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1263,6 +1277,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 /**
  * Generated class for the ContactoPage page.
  *
@@ -1270,7 +1286,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ContactoPage = (function () {
-    function ContactoPage(/*private emailComposer: EmailComposer, private callNumber: CallNumber,*/ userProvider, navCtrl, navParams) {
+    function ContactoPage(emailComposer, callNumber, userProvider, navCtrl, navParams) {
+        this.emailComposer = emailComposer;
+        this.callNumber = callNumber;
         this.userProvider = userProvider;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -1286,29 +1304,30 @@ var ContactoPage = (function () {
         });
     };
     ContactoPage.prototype.llamar = function (telefono) {
-        /*this.callNumber.callNumber(telefono, true)
-          .then(() => console.log('Launched dialer!'))
-          .catch(() => console.log('Error launching dialer'));*/
+        this.callNumber.callNumber(telefono, true)
+            .then(function () { return console.log('Launched dialer!'); })
+            .catch(function () { return console.log('Error launching dialer'); });
     };
-    ContactoPage.prototype.email = function (email) {
-        /*  this.emailComposer.isAvailable().then((available: boolean) =>{
-           if(available) {
-             //Now we know we can send
-           }
-          });
-      
-          let email = {
-            to: emailInput,
-            cc: '',
+    ContactoPage.prototype.email = function (myEmail) {
+        this.emailComposer.isAvailable().then(function (available) {
+            if (available) {
+                //Now we know we can send
+            }
+        });
+        var info = 'Buen día, me gustaría saber más sobre su Finca, mi nombre es ' +
+            this.userProvider.userNombre['nombre'] +
+            this.userProvider.userApellido['apellido'] + ' y mi telefono es ';
+        this.userProvider.userTelefono['telefono'] + ' agradezco su respuesta.';
+        var email = {
+            to: myEmail,
             bcc: [],
             attachments: [],
-            subject: 'Contacto finca VacApp',
-            body: '',
+            subject: 'Contacto VacApp',
+            body: info,
             isHtml: true
-          };
-      
-          // Send a text message using default options
-          this.emailComposer.open(email);*/
+        };
+        // Send a text message using default options
+        this.emailComposer.open(email);
     };
     ContactoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ContactoPage');
@@ -1317,14 +1336,14 @@ var ContactoPage = (function () {
 }());
 ContactoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-contacto',template:/*ion-inline-start:"/home/juan/Desktop/VacApp/appganMobile/src/pages/contacto/contacto.html"*/'<!--\n  Generated template for the ContactoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="secondary">\n    <ion-title>Contacto</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-card *ngFor="let user of usuarios">\n	  <ion-card-content>\n	    <ion-card-title>\n	      Propietario: \n	    </ion-card-title>\n      	<p>Nombres: {{user.nombre}}</p>\n      	<p>Apellidos: {{user.apellido}}</p>\n      	<p>Email: {{user.email}}</p>\n      	<p>Telefono: {{user.telefono}}</p>\n	  </ion-card-content>\n	</ion-card>\n    <button ion-button color="primary" full (click)="llamar(user.telefono)">Llamar</button>\n    <button ion-button color="secondary" full (click)="email(user.email)">Escribir correo</button>\n\n</ion-content>\n'/*ion-inline-end:"/home/juan/Desktop/VacApp/appganMobile/src/pages/contacto/contacto.html"*/,
+        selector: 'page-contacto',template:/*ion-inline-start:"/home/juan/Desktop/VacApp/appganMobile/src/pages/contacto/contacto.html"*/'<!--\n  Generated template for the ContactoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="secondary">\n    <ion-title>Contacto</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-card *ngFor="let user of usuarios">\n	  <ion-card-content>\n	    <ion-card-title>\n	      Propietario: \n	    </ion-card-title>\n      	<p>Nombres: {{user.nombre}}</p>\n      	<p>Apellidos: {{user.apellido}}</p>\n      	<p>Email: {{user.email}}</p>\n      	<p>Telefono: {{user.telefono}}</p>\n        <button ion-button color="primary" full (click)="llamar(user.telefono)">Llamar</button>\n        <button ion-button color="secondary" full (click)="email(user.email)">Escribir correo</button>\n	  </ion-card-content>\n	</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/home/juan/Desktop/VacApp/appganMobile/src/pages/contacto/contacto.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_user_user__["a" /* UserProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_email_composer__["a" /* EmailComposer */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_call_number__["a" /* CallNumber */], __WEBPACK_IMPORTED_MODULE_4__providers_user_user__["a" /* UserProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
 ], ContactoPage);
 
 //# sourceMappingURL=contacto.js.map
 
 /***/ })
 
-},[213]);
+},[215]);
 //# sourceMappingURL=main.js.map

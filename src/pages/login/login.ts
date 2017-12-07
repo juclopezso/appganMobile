@@ -32,7 +32,10 @@ export class LoginPage {
       localStorage.setItem('userData', JSON.stringify(this.responseData));
 
       this.userProvider.shareObj['id']=this.responseData['id'];
-      console.log(this.userProvider.shareObj['id']);
+      this.userProvider.userNombre['nombre']=this.responseData['nombre'];
+      this.userProvider.userApellido['apellido']=this.responseData['apellido'];
+      this.userProvider.userEmail['email']=this.responseData['email'];
+      this.userProvider.userTelefono['telefono']=this.responseData['telefono'];
 
       this.app.getRootNav().setRoot( HomePage );
     }, (err) => {
