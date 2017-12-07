@@ -16,6 +16,7 @@ import { CertificadosPage } from '../pages/certificados/certificados';
 import { ProductosPage } from '../pages/productos/productos';
 import { MapPage } from '../pages/map/map';
 import { ContactoPage } from '../pages/contacto/contacto';
+import { AddFincaPage } from '../pages/add-finca/add-finca';
 
 
 import { FincaProvider } from '../providers/finca/finca';
@@ -23,6 +24,7 @@ import { UserProvider } from '../providers/user/user';
 import { CertificadoProvider } from '../providers/certificado/certificado';
 import { ProductoProvider } from '../providers/producto/producto';
 
+import { Geolocation } from '@ionic-native/geolocation';
 
 import {
  GoogleMaps,
@@ -47,7 +49,8 @@ import {
     CertificadosPage,
     ProductosPage,
     MapPage,
-    ContactoPage
+    ContactoPage,
+    AddFincaPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,8 @@ import {
     CertificadosPage,
     ProductosPage,
     MapPage,
-    ContactoPage
+    ContactoPage,
+    AddFincaPage
   ],
   providers: [
     StatusBar,
@@ -76,7 +80,8 @@ import {
     UserProvider,
     CertificadoProvider,
     ProductoProvider,
-    GoogleMaps
+    GoogleMaps,
+    Geolocation
   ]
 })
 export class AppModule {}

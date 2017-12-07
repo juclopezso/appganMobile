@@ -49,5 +49,31 @@
       "API_KEY_FOR_ANDROID": "AIzaSyBVeeB91nf9sb_q4SZMupa9iA40P6-2RK0",
       "API_KEY_FOR_IOS": "AIzaSyCAxuiXm3K-sFokQ1BevOePHbBXmTRBOuY"
     }
+  },
+  "mx.ferreyra.callnumber": {
+    "source": {
+      "type": "registry",
+      "id": "call-number"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-email-composer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-email-composer"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-geolocation@3.0.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+    }
   }
 }

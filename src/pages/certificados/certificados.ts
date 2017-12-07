@@ -10,6 +10,7 @@ import { CertificadoProvider } from '../../providers/certificado/certificado';
  * Ionic pages and navigation.
  */
 
+
 @IonicPage()
 @Component({
   selector: 'page-certificados',
@@ -19,6 +20,9 @@ export class CertificadosPage {
 
 	finca_id: any;
 	certificados: any;
+
+	espera_cola: number;
+	espera_sistema: number;	
 
   constructor(public certificadoProvider: CertificadoProvider, public navCtrl: NavController, public navParams: NavParams) {
 	this.finca_id = this.navParams.get('id');

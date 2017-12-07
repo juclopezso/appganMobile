@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user';
 
 import { LandingPage } from '../landing/landing';
@@ -18,23 +18,33 @@ import { LoginPage } from '../login/login';
 })
 export class SignupPage {
 
-	responseData : any;
-  	userData = {"nombre": "","apellido": "", "email": "", "password": "", "telefono": ""};	
+	 responseData : any;
+   userData = {};	
 
-  constructor(public userProvider: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public alertCtrl: AlertController, public userProvider: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
   signup(){
+    console.log(this.userData);
      this.userProvider.postData(this.userData).then((result) => {
       this.responseData = result;
       console.log(this.responseData);
       localStorage.setItem('userData', JSON.stringify(this.responseData));
       this.navCtrl.pop();
+      this.alert("Registro exitoso!", "Ahora puede entrar a la aplicacion en [Entrar]");
     }, (err) => {
       // Error log
     });
 
+  }
+
+  alert(tittle: string, message: string) {
+    const alert = this.alertCtrl.create({
+      title: tittle,
+      subTitle: message,
+      buttons: ['Okay']
+    });
+    alert.present();
   }
 
   ionViewDidLoad() {

@@ -9,21 +9,17 @@
 <ion-content padding class="appBackground">
   <ion-card>
     <ion-card-content>
-      <ion-list>
-
-        <ion-item>
-          <ion-label stacked>Email</ion-label>
-          <ion-input type="text" [(ngModel)]="userData.email"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label stacked>Password</ion-label>
-          <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
-        </ion-item>
-
-        <button ion-button full color="secondary" (click)="login()">Entrar</button>
-        
-      </ion-list>
+      <form (ngSubmit)="login()">
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="userData.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="userData.password" name="password"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block color="secondary">Entrar</button>
+    </form>
     </ion-card-content>
   </ion-card>
 </ion-content>

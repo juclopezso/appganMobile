@@ -15,7 +15,7 @@ export class ProductoProvider {
     console.log('Hello ProductoProvider Provider');
   }
 
-  apiUrl = 'http://192.168.43.20:3000';
+  apiUrl = 'https://arcane-wildwood-86496.herokuapp.com';
   //apiUrl = 'http://192.168.0.19:3000';
 
 

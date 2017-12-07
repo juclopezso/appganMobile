@@ -16,7 +16,7 @@ export class CertificadoProvider {
   }
 
   //apiUrl = 'http://192.168.43.20:3000';
-  apiUrl = 'http://192.168.0.19:3000';
+  apiUrl = 'https://arcane-wildwood-86496.herokuapp.com';
 
 
   getCertificados_by_finca(id){

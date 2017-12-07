@@ -2,6 +2,13 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { FincaProvider } from '../../providers/finca/finca';
+import { UserProvider } from '../../providers/user/user';
+
+import { CertificadosPage } from '../certificados/certificados';
+import { ProductosPage } from '../productos/productos';
+import { MapPage } from '../map/map';
+import { ContactoPage } from '../contacto/contacto';
+import { AddFincaPage } from '../add-finca/add-finca';
 /**
  * Generated class for the FincaPage page.
  *
@@ -16,21 +23,39 @@ import { FincaProvider } from '../../providers/finca/finca';
 })
 export class FincaPage {
 
-  constructor(public fincaProvider: FincaProvider, public navCtrl: NavController, public navParams: NavParams) {
-  	this.getFincas();
-
-  }
-
   fincas: any;
 
-  getFincas(){
-  	this.fincaProvider.getFincas()
-  	.subscribe(res=>this
-  		.fincas=res);
+  constructor(public userProvider: UserProvider, public fincaProvider: FincaProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.getMyFincas();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FincaPage');
+  
+
+  getMyFincas(){
+    this.fincaProvider.getMyFincas( this.userProvider.shareObj['id'] )
+    .subscribe(res=>this
+      .fincas=res);
+  }
+
+  certificados(id){
+    this.navCtrl.push(CertificadosPage, { id: id });
+  }
+
+
+  productos(id){
+    this.navCtrl.push(ProductosPage, { id: id });
+  }
+
+  mapa(finca){
+    this.navCtrl.push(MapPage, { finca:finca});
+  }
+
+  contacto(id){
+    this.navCtrl.push(ContactoPage, { id: id });
+  }
+
+  addFinca(){
+    this.navCtrl.push(AddFincaPage);
   }
 
 }

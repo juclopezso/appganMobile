@@ -7,12 +7,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>usuario</ion-title>
+    <ion-title>Mi perfil</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+	<ion-card *ngFor="let user of usuarios">
+	  <ion-card-content>
+	    <ion-card-title>
+	      Mis datos: 
+	    </ion-card-title>
+      	<p>Nombres: {{user.nombre}}</p>
+      	<p>Apellidos: {{user.apellido}}</p>
+      	<p>Email: {{user.email}}</p>
+      	<p>Telefono: {{user.telefono}}</p>
+	  </ion-card-content>
+	</ion-card>
+	<button ion-button color="primary" full (click)="editar()">Editar datos</button>
+  <button ion-button color="secondary" full (click)="addFinca()">Añadir Finca</button>
 
 </ion-content>

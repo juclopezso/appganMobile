@@ -47,7 +47,7 @@ export class MapPage {
         zoom: 18,
         tilt: 30,
       },
-      	mapType: "MAP_TYPE_HYBRID"
+        mapType: "MAP_TYPE_HYBRID"
     };
 
     this.map = this.googleMaps.create('map_canvas', mapOptions);
@@ -80,7 +80,7 @@ export class MapPage {
   }
 
   ionViewDidLoad() {
-  	this.loadMap();
+    this.loadMap();
     console.log('ionViewDidLoad MapPage');
   }
 

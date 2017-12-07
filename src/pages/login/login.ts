@@ -19,16 +19,21 @@ import { HomePage } from '../home/home';
 export class LoginPage {
 
   responseData : any;
-  	userData = {"email": "", "password": ""};	
+  userData = {}; 
 
-  constructor(public app: App, public platform: Platform, public userProvider: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public app: App, public userProvider: UserProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   login(){
-     this.userProvider.postData(this.userData).then((result) => {
+    console.log(this.userData);
+     this.userProvider.postLogin(this.userData).then((result) => {
       this.responseData = result;
       console.log(this.responseData);
       localStorage.setItem('userData', JSON.stringify(this.responseData));
+
+      this.userProvider.shareObj['id']=this.responseData['id'];
+      console.log(this.userProvider.shareObj['id']);
+
       this.app.getRootNav().setRoot( HomePage );
     }, (err) => {
       // Error log

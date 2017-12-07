@@ -9,6 +9,7 @@ import { FincaPage } from '../pages/finca/finca';
 import { UsuarioPage } from '../pages/usuario/usuario';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { MapPage } from '../pages/map/map';
 
 
 @Component({
@@ -29,7 +30,6 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Mi Cuenta', component: UsuarioPage },
       { title: 'Mis Fincas', component: FincaPage },
-
     ];
 
   }
